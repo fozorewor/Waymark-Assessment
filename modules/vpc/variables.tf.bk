@@ -1,0 +1,25 @@
+variable "env" {
+  default = "dev"
+}
+
+variable "project" {
+  default = "nrd"
+}
+
+variable "vpc_cidr_block" {
+  default = "10.40.0.0/16"
+}
+
+variable "vpc_subnet_cidr_blocks" {
+  type = map(string)
+  default = {
+    public_a = "10.40.0.0/22"
+    public_b = "10.40.4.0/22"
+    private_a = "10.40.24.0/22"
+    private_b = "10.40.28.0/22"
+  }
+}
+
+variable "internet_cidr_block" {
+  default = "0.0.0.0/0"
+}
